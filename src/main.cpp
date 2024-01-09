@@ -1,25 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
-
-class Task {
-public:
-    Task(const std::string& description, int priority)
-        : description(description), priority(priority) {}
-
-    void displayTask() const {
-        std::cout << "Task: " << description << "\tPriority: " << priority << "\n";
-    }
-
-    // Overload the less-than operator for priority comparison
-    bool operator<(const Task& other) const {
-        return priority < other.priority;
-    }
-
-private:
-    std::string description;
-    int priority;
-};
+#include "../include/task.h"
 
 int main() {
     std::priority_queue<Task> taskQueue;
@@ -33,7 +15,11 @@ int main() {
         std::getline(std::cin, description);
 
         std::cout << "Enter task priority: ";
-        std::cin >> priority;
+        while (!(std::cin >> priority)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input. Enter a valid priority: ";
+        }
         std::cin.ignore(); // Consume the newline character left in the stream
 
         // Create a new task and add it to the priority queue
