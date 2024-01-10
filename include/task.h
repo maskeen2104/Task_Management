@@ -10,6 +10,7 @@ public:
     void displayTask() const;
     void adjustPriority(int newPriority);
     bool operator<(const Task& other) const;
+    bool operator==(const std::string& taskName) const;
 
 private:
     std::string name;

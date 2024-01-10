@@ -15,3 +15,7 @@ void Task::adjustPriority(int newPriority) {
 bool Task::operator<(const Task& other) const {
     return priority > other.priority;
 }
+
+bool Task::operator==(const std::string& taskName) const {
+    return name == taskName;
+}

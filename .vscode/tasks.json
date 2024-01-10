@@ -5,7 +5,16 @@
             "label": "build",
             "type": "shell",
             "command": "g++",
-            "args": ["-std=c++11", "-g", "${file}", "${workspaceFolder}/src/task.cpp", "-o", "${fileDirname}/output", "-arch", "x86_64"],
+            "args": [
+                "-std=c++11",
+                "-g",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/task.cpp",
+                "-o",
+                "${workspaceFolder}/src/output",
+                "-arch",
+                "x86_64"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -13,3 +22,4 @@
         }
     ]
 }
+
