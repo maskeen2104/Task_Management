@@ -13,5 +13,5 @@ void Task::adjustPriority(int newPriority) {
 }
 
 bool Task::operator<(const Task& other) const {
-    return priority < other.priority;
+    return priority > other.priority;
 }
